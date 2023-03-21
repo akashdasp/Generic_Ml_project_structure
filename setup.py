@@ -1,5 +1,6 @@
 from setuptools import find_packages,setup
 from typing import List
+hypen="-e ."
 def get_requirements(file_path:str) -> List[str]:
     '''
     this function will return the list of the Requirements
@@ -8,9 +9,9 @@ def get_requirements(file_path:str) -> List[str]:
     with open(file_path) as file_obj:
          requirements=file_obj.readlines()
          requirements=[req.replace('\n','') for req in requirements]
-         if '-e .' in requirements:
-              requirements.remove('-e .')
-
+         if hypen in requirements:
+              requirements.remove(hypen)
+    return requirements
 
 
 setup(
@@ -19,5 +20,5 @@ setup(
     author='Akash', 
     author_email='akash.dasp@gmail.com',
     packages=find_packages(),
-    install_requires=get_requirements('requirement.txt')
+    install_requires=get_requirements('requirements.txt')
 )
