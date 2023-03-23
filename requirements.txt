@@ -5,4 +5,6 @@ catboost
 xgboost
 sklearn
 DateTime
+scikit-learn
+dill
 -e .
